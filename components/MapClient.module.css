@@ -1,0 +1,160 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #1a1b1e;
+}
+
+.header {
+  background-color: #2e2f33;
+  color: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #1a1b1e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.mapContainer {
+  flex: 1;
+  height: 100%;
+}
+
+/* ── Camera tilt control (MapLibre version only) ────────────────────────── */
+.tiltControl {
+  position: absolute;
+  top: 10px;
+  right: 50px; /* leave room for MapLibre NavigationControl */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 31, 35, 0.85);
+  border-radius: 8px;
+  padding: 6px 10px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+
+.tiltControl button {
+  background: #3a3b40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tiltControl button:hover {
+  background: #565760;
+}
+
+.tiltControl input[type='range'] {
+  width: 80px;
+  accent-color: #4fc3f7;
+  cursor: pointer;
+}
+
+/* ── Basemap switcher (MapLibre version only) ───────────────────────────── */
+.basemapSwitcher {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  pointer-events: auto;
+}
+
+.basemapBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(24, 25, 28, 0.82);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  min-width: 96px;
+  text-align: left;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.basemapBtn:hover {
+  background: rgba(50, 52, 60, 0.92);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.basemapBtnActive {
+  background: rgba(79, 195, 247, 0.18);
+  color: #4fc3f7;
+  border-color: rgba(79, 195, 247, 0.7);
+}
+
+.basemapBtnIcon {
+  font-size: 13px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.basemapBtnLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ── Flood rise animation (MapLibre version only) ───────────────────────── */
+/* Applied to the story overlay bar when simulation is stepping            */
+@keyframes floodPulse {
+  0%   { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(79, 195, 247, 0.45); }
+  60%  { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(79, 195, 247, 0); }
+  100% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(79, 195, 247, 0); }
+}
+
+@keyframes floodWave {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.floodRising {
+  animation: floodPulse 1.4s ease-out;
+}
+
+/* Water-level progress bar shown inside story overlay during simulation */
+.waterBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(90deg, #4fc3f7 0%, #0288d1 60%, #26c6da 100%);
+  background-size: 200% 100%;
+  animation: floodWave 1.4s linear;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}

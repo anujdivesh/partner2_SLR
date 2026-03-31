@@ -1,0 +1,746 @@
+.container {
+  width: 25vw;
+  min-width: 380px;
+  background-color: #2e2f33;
+  border-left: 1px solid #1a1b1e;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, min-width 0.3s ease;
+  position: relative;
+}
+
+.leftContainer {
+  width: 16vw;
+  min-width: 240px;
+  border-left: none;
+  border-right: 1px solid #1a1b1e;
+}
+
+.container.collapsed {
+  width: 60px;
+  min-width: 60px;
+}
+
+.header {
+  padding: 12px 20px;
+  border-bottom: 2px solid #1a1b1e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.toggleButton:hover {
+  background-color: #3a3b3f;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.panelScope {
+  margin: 10px 0 8px;
+  padding: 6px 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e6e6e6;
+  background: #242528;
+  border: 1px solid #3a3b3f;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.panelTabs {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.panelTab {
+  width: 96px;
+  min-height: 64px;
+  border-radius: 8px;
+  border: 1px solid #4a4b4f;
+  background: #1f2023;
+  color: #cfd8dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 6px 8px;
+}
+
+.panelTab:hover {
+  border-color: #5a5b5f;
+  background: #2a2b30;
+}
+
+.panelTabActive {
+  background: #64b5f6;
+  border-color: #64b5f6;
+  color: #1f2023;
+}
+
+.panelTab svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.panelTabLabel {
+  font-size: 9px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: inherit;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.panelContent {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.panelContentActive {
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.panelCard {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #3a3b3f;
+  background: linear-gradient(160deg, rgba(32,33,36,0.95), rgba(24,25,28,0.95));
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+}
+
+.panelCardTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.panelCardMeta {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #9aa0a6;
+}
+
+.panelChartWrap {
+  margin: 10px 0;
+  height: 180px;
+}
+
+.panelCardFooter {
+  font-size: 10px;
+  color: #e0e0e0;
+}
+
+.panelFilters {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.panelFilterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #cfd8dc;
+}
+
+.panelSelect {
+  background: #1f2023;
+  border: 1px solid #3a3b3f;
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: #f2f2f2;
+  font-size: 11px;
+}
+
+.panelChartGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.panelChartCard {
+  cursor: pointer;
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #2f3136;
+  background: #1b1c1f;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.panelChartCard:hover {
+  border-color: #4a4b4f;
+  transform: translateY(-2px);
+}
+
+.panelPlaceholder {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #9aa0a6;
+}
+
+.container.collapsed .content {
+  display: none;
+  opacity: 0;
+}
+
+.container.collapsed .header {
+  padding: 12px 0;
+  justify-content: center;
+}
+
+.container.collapsed .title {
+  display: none;
+}
+
+.title {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preferencesLabel {
+  position: absolute;
+  right: -74px;
+  bottom: 12px;
+  color: #cfcfcf;
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.preferencesLabel:hover {
+  color: #ffffff;
+}
+
+.preferencesModalContent {
+  background: #2e2f33;
+  border: 1px solid #4a4b4f;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 420px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.preferencesModalBody {
+  padding: 16px;
+  color: #e0e0e0;
+  font-size: 13px;
+}
+
+.tabsContainer {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px;
+  border-bottom: 1px solid #4a4b4f;
+  background: #2e2f33;
+}
+
+.tab {
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #e0e0e0;
+}
+
+.tabActive {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+}
+
+/* Breadcrumb Styles */
+.breadcrumbContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+  background-color: #25262a;
+  border: 1px solid #4a4b4f;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.breadcrumbItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbButton {
+  background: none;
+  border: none;
+  color: #64b5f6;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumbButton:hover {
+  background-color: rgba(100, 181, 246, 0.1);
+}
+
+.breadcrumbText {
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbSeparator {
+  color: #666;
+  font-size: 12px;
+  margin: 0 2px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: #2e2f33;
+  border: 1px solid #4a4b4f;
+  border-radius: 6px;
+  list-style: none;
+  padding: 4px;
+  min-width: 180px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+}
+
+.dropdownItem:hover {
+  background-color: #3a3b3f;
+}
+
+.dropdownItem.selected {
+  background-color: #64b5f6;
+  color: #fff;
+}
+
+.selectGrid {
+  display: none; /* Hidden as we replaced it with breadcrumbs */
+}
+
+.select {
+  width: 100%;
+  margin-bottom: 0px;
+  background-color: #3a3b3f;
+  color: #fff;
+  border: 1px solid #4a4b4f;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.select:hover {
+  border-color: #5a5b5f;
+}
+
+.radioSection {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.radioLabel {
+  color: #fff;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.radioGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.radioItem {
+  /* Reset previous flex styles */
+  display: flex !important; 
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  background-color: #3a3b3f;
+  border: 1px solid #4a4b4f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  user-select: none;
+}
+
+.radioItem:hover {
+  background-color: #4a4b4f;
+  border-color: #5a5b5f;
+}
+
+.radioItemSelected {
+  background-color: #64b5f6 !important;
+  border-color: #64b5f6 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.radioItemSelected .radioText {
+  color: #fff;
+}
+
+/* Hide the actual radio input since the whole button is clickable */
+.radioInput {
+  display: none;
+}
+
+.radioText {
+  font-size: 12px;
+  color: #e0e0e0;
+}
+
+.sliderSection {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.sliderLabel {
+  color: #fff;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.sliderValue {
+  color: #64b5f6;
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #64b5f6;
+}
+
+.sliderRange {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.loadButton {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  background-color: #64b5f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loadButton:hover {
+  opacity: 0.9;
+}
+
+.loadButton.active {
+  background-color: #f44336;
+}
+
+.topSection {
+  flex: 0 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1a1b1e;
+}
+
+.bottomSection {
+  flex: 1;
+  padding-top: 20px;
+  min-height: 200px;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.chartWrapper {
+  position: relative;
+  border: 1px solid #3a3b3f;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #26272b;
+}
+
+.expandOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.chartWrapper:hover .expandOverlay {
+  opacity: 1;
+}
+
+.overlayText {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #e0e0e0;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background: #2e2f33;
+  border: 1px solid #4a4b4f;
+  border-radius: 10px;
+  width: 96vw;
+  max-width: 1300px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1a1b1e;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.modalControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewToggleGroup {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.viewToggleBtn {
+  background: #3a3b3f;
+  border: 1px solid #4a4b4f;
+  color: #e0e0e0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.viewToggleBtn:hover {
+  background: #4a4b4f;
+}
+
+.viewToggleBtn.active {
+  background: #64b5f6;
+  border-color: #64b5f6;
+  color: #fff;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modalBody {
+  flex: 1;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.expandedChartContainer {
+  height: 100%;
+}
+
+.downloadWrapper {
+  position: relative;
+}
+
+.downloadDropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #2e2f33;
+  border: 1px solid #4a4b4f;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+.downloadItem {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 12px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.downloadItem:hover {
+  background: #3a3b3f;
+}
+
+.tableContainer {
+  height: 100%;
+  overflow: auto;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #e0e0e0;
+}
+
+.dataTable th,
+.dataTable td {
+  border: 1px solid #3a3b3f;
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dataTable th {
+  background: #25262a;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

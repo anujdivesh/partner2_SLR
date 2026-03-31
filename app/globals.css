@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Leaflet Building Popup Styling */
+.building-popup .leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.building-popup .leaflet-popup-content {
+  margin: 0;
+  width: 100% !important;
+}
+
+/* Leaflet side-by-side (local copy to avoid package runtime CSS requires) */
+.leaflet-sbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 650;
+}
+
+.leaflet-sbs-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  background-color: #fff;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.leaflet-sbs-range {
+  -webkit-appearance: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.leaflet-sbs-range:focus {
+  outline: none;
+}
+
+.leaflet-sbs-range::-moz-range-track,
+.leaflet-sbs-range::-ms-track {
+  opacity: 0;
+}
+
+.leaflet-sbs-range::-ms-tooltip {
+  display: none;
+}
+
+.leaflet-sbs-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: ew-resize;
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-sbs-range::-moz-range-thumb,
+.leaflet-sbs-range::-ms-thumb {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: ew-resize;
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
