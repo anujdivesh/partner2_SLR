@@ -1,4 +1,4 @@
-Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,Road_AAL,Infrastructure_AAL,Average_Annual_Population_Exposed
+﻿Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,Road_AAL,Infrastructure_AAL,Average_Annual_Population_Exposed
 9,Aitutaki,ssp245 (medium confidence),50,2020,0.053,549804.98,8688.72,1889.84,1494.59,537731.28,63.17
 9,Aitutaki,ssp245 (medium confidence),50,2030,0.097,569130.75,9539.19,2018.52,1546.76,556026.47,63.17
 9,Aitutaki,ssp245 (medium confidence),50,2040,0.144,590373.3,10545.28,2151.17,1604.78,576071.78,65.08
@@ -22,7 +22,7 @@ Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,R
 9,Aitutaki,ssp585 (medium confidence),50,2080,0.535,767728.76,23555.45,3067.32,2094.0,739012.28,66.01
 9,Aitutaki,ssp585 (medium confidence),50,2090,0.664,835074.02,32155.06,3327.77,2277.82,797313.19,66.22
 9,Aitutaki,ssp585 (medium confidence),50,2100,0.812,919970.64,44871.34,3578.22,2493.72,869027.17,70.39
-9,Aitutaki,ssp585 (medium confidence),50,2110,0.921,983282.33,54678.19,3752.44,2650.83,922200.69,71.16
+9,Aitutaki,ssp585 (medium confidence),50,2110,0.921,983282.33,54678.19,3752.51,2650.83,922200.69,71.16
 9,Aitutaki,ssp585 (medium confidence),50,2120,1.054,1059096.13,68148.92,3978.31,2833.0,984135.37,74.27
 9,Aitutaki,ssp585 (medium confidence),50,2130,1.184,1133399.94,82676.07,4247.4,3010.28,1043465.99,79.34
 9,Aitutaki,ssp585 (medium confidence),50,2140,1.306,1205211.61,97070.76,4549.62,3184.65,1100406.58,81.76
@@ -248,8 +248,8 @@ Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,R
 8,Penrhyn,ssp585 (medium confidence),50,2100,0.812,36838.56,7198.51,0.0,0.0,29640.05,54.86
 8,Penrhyn,ssp585 (medium confidence),50,2110,0.921,40799.82,8734.66,0.0,0.0,32065.16,61.05
 8,Penrhyn,ssp585 (medium confidence),50,2120,1.054,46373.25,10924.95,0.0,0.06,35448.14,62.92
-8,Penrhyn,ssp585 (medium confidence),50,2130,1.184,7742.08,1877.14,0.0,0.0,5864.37,62.89
-8,Penrhyn,ssp585 (medium confidence),50,2140,1.306,3761.1,1123.03,0.0,0.27,2637.81,63.22
+8,Penrhyn,ssp585 (medium confidence),50,2130,1.184,48388.65,11733.14,0.0,0.13,36655.39,62.92
+8,Penrhyn,ssp585 (medium confidence),50,2140,1.306,49246.76,12152.38,0.0,0.39,37094.06,63.22
 8,Penrhyn,ssp585 (medium confidence),50,2150,1.42,64020.94,19317.31,0.0,8.44,44695.14,67.27
 5,Pukapuka,ssp245 (medium confidence),50,2020,0.053,1213.36,0.0,155.43,682.66,375.2,61.73
 5,Pukapuka,ssp245 (medium confidence),50,2030,0.097,1342.22,0.0,165.6,718.05,458.49,61.73
@@ -271,7 +271,7 @@ Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,R
 5,Pukapuka,ssp585 (medium confidence),50,2050,0.241,1752.97,0.0,199.71,825.92,727.38,62.25
 5,Pukapuka,ssp585 (medium confidence),50,2060,0.323,1972.18,0.0,218.92,884.78,868.13,62.74
 5,Pukapuka,ssp585 (medium confidence),50,2070,0.424,2192.59,0.0,239.2,951.68,1001.71,64.41
-5,Pukapuka,ssp585 (medium confidence),50,2080,0.535,2376.86,0.0,263.74,1018.75,1094.37,65.24
+5,Pukapuka,ssp585 (medium confidence),50,2080,0.535,2376.86,0.0,263.74,1018.74,1094.37,65.24
 5,Pukapuka,ssp585 (medium confidence),50,2090,0.664,2615.79,0.0,318.52,1096.2,1201.37,65.52
 5,Pukapuka,ssp585 (medium confidence),50,2100,0.812,2913.59,0.0,378.77,1211.05,1323.44,72.71
 5,Pukapuka,ssp585 (medium confidence),50,2110,0.921,3150.73,0.0,424.04,1313.21,1413.76,72.71
@@ -327,7 +327,7 @@ Region_ID,Region,Scenario,Percentile,Year,SLR,Total_AAL,Building_AAL,Crops_AAL,R
 3,Rarotonga,ssp585 (medium confidence),50,2050,0.241,2020814.42,710924.35,21722.98,116255.28,1171911.71,1727.78
 3,Rarotonga,ssp585 (medium confidence),50,2060,0.323,2309435.49,840427.42,24784.53,135466.12,1308757.43,1795.17
 3,Rarotonga,ssp585 (medium confidence),50,2070,0.424,2703396.02,1028036.41,28886.01,162709.25,1483764.25,1899.59
-3,Rarotonga,ssp585 (medium confidence),50,2080,0.535,3178033.38,1276941.85,33725.74,197975.95,1669390.1,2005.19
+3,Rarotonga,ssp585 (medium confidence),50,2080,0.535,3178033.38,1276941.85,33725.74,197975.95,1669390.11,2005.19
 3,Rarotonga,ssp585 (medium confidence),50,2090,0.664,3795415.67,1637469.24,40075.56,245539.64,1872330.89,2140.51
 3,Rarotonga,ssp585 (medium confidence),50,2100,0.812,4651144.3,2187631.33,48138.09,312463.0,2102911.87,2342.95
 3,Rarotonga,ssp585 (medium confidence),50,2110,0.921,5330553.36,2638026.49,54222.98,365678.3,2272625.84,2403.74
