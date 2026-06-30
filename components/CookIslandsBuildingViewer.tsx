@@ -155,7 +155,7 @@ const getSeaLevelSeries = (properties: BuildingProperties, returnPeriod?: string
 
   return filtered
     .map((entry) => ({
-      label: `${entry.seaLevel}cm`,
+      label: `${entry.seaLevel}`,
       slr: Number(entry.seaLevel),
       loss: entry.loss
     }))
